@@ -3,8 +3,7 @@ const db = require('../database/db-config');
 const server = require('../api/server');
 
 beforeAll(async () => {
-
-  // await db.raw('TRUNCATE users RESTART IDENTITY CASCADE');
+  await db.raw('TRUNCATE users RESTART IDENTITY CASCADE');
 });
 
 const testUser = {
@@ -17,13 +16,13 @@ const testUser = {
 describe('userRouter', () => {
   let cookie;
   describe('POST /users/', () => {
-    // test('returns a 201 response after adding new user', async () => {
-    //   const response = await request(server)
-    //     .post('/users/')
-    //     .send(testUser)
-    //     .expect(201);
-    //   cookie = response.headers['set-cookie'];
-    // });
+    test('returns a 201 response after adding new user', async () => {
+      const response = await request(server)
+        .post('/users/')
+        .send(testUser)
+        .expect(201);
+      cookie = response.headers['set-cookie'];
+    });
 
     test('returns a 200 if user already exists', async () => {
       const response = await request(server)
@@ -47,7 +46,6 @@ describe('userRouter', () => {
         .set('Cookie', cookie)
         .expect(400)
         .expect({ error: 'User does not exist' });
-
     });
   });
   describe('PUT /users/:id', () => {
