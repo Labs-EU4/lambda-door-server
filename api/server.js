@@ -24,8 +24,8 @@ server.use(
     origin: [
       `${process.env.FRONT_URL}`,
       'http://localhost:3000',
-      'https://lambdadoor.netlify.com',
-      'https://lambdadoor.com',
+      'https://lambdadooreu4-staging.netlify.com',
+      'https://lambdadooreu4.netlify.com/',
       '*',
     ],
     credentials: true,
