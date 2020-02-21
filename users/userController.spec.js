@@ -1,28 +1,15 @@
 const request = require('supertest');
 const db = require('../database/db-config');
 const server = require('../api/server');
-
-// const testUser = {
-//   slack_id: 'slack_id',
-//   name: 'name',
-//   email_address: 'email_address',
-//   img_72: 'image_url',
-// };
-
-const testUser = {
-  full_name: 'Test 2',
-  slack_id: 'slack_id_two',
-  username: 'second_name',
-  email_address: 'email_address_two',
-  profile_picture: 'testurltwo',
-};
-
 beforeAll(async () => {
-  await db.raw('TRUNCATE users RESTART IDENTITY CASCADE');
-
-  await db('users').insert(testUser);
+  // await db.raw('TRUNCATE users RESTART IDENTITY CASCADE');
 });
-
+const testUser = {
+  slack_id: 'slack_id',
+  name: 'name',
+  email_address: 'email_address',
+  img_72: 'image_url',
+};
 describe('userRouter', () => {
   let cookie;
   describe('POST /users/', () => {
@@ -33,7 +20,6 @@ describe('userRouter', () => {
         .expect(201);
       cookie = response.headers['set-cookie'];
     });
-
     test('returns a 200 if user already exists', async () => {
       const response = await request(server)
         .post('/users/')
@@ -87,7 +73,6 @@ describe('userRouter', () => {
     });
   });
 });
-
 afterAll(async () => {
   await db.raw('TRUNCATE users RESTART IDENTITY CASCADE');
 });
