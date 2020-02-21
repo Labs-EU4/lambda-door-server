@@ -17,13 +17,13 @@ const testUser = {
 describe('userRouter', () => {
   let cookie;
   describe('POST /users/', () => {
-    test('returns a 201 response after adding new user', async () => {
-      const response = await request(server)
-        .post('/users/')
-        .send(testUser)
-        .expect(201);
-      cookie = response.headers['set-cookie'];
-    });
+    // test('returns a 201 response after adding new user', async () => {
+    //   const response = await request(server)
+    //     .post('/users/')
+    //     .send(testUser)
+    //     .expect(201);
+    //   cookie = response.headers['set-cookie'];
+    // });
 
     test('returns a 200 if user already exists', async () => {
       const response = await request(server)
