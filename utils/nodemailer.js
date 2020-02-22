@@ -2,11 +2,11 @@ const nodemailer = require('nodemailer');
 const hbs = require('nodemailer-express-handlebars');
 
 const transporter = nodemailer.createTransport({
-  host: 'mail.privateemail.com',
+  host: 'smtp.ethereal.email',
   port: 587,
   secure: false,
   auth: {
-    user: 'support@lambdadoor.com',
+    user: 'shaniya13@ethereal.email',
     pass: process.env.EMAIL_PASSWORD,
   },
 });
