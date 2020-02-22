@@ -47,7 +47,7 @@ describe('userRouter', () => {
   describe('PUT /users/:id', () => {
     test('returns an error when user does not exist', async () => {
       const response = await request(server)
-        .patch('/users/6')
+        .patch('/users/60')
         .send({
           full_name: 'Test 2',
         })
