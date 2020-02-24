@@ -11,7 +11,8 @@
     "rollback": "npx knex migrate:rollback",
     "seed": "npx knex seed:run",
     "test": "cross-env DB_ENV=test jest --coverage --ci --runInBand --detectOpenHandles --forceExit",
-    "ci:test": "cross-env DB_ENV=ci jest --coverage --ci --runInBand --detectOpenHandles --forceExit"
+    "ci:test": "cross-env DB_ENV=ci jest --coverage --ci --runInBand --detectOpenHandles --forceExit",
+    "coverage": "nyc report --reporter=text-lcov | coveralls && nyc report --reporter=lcov"
   },
   "repository": {
     "type": "git",
