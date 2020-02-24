@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.com/Labs-EU4/lambda-door-server.svg?branch=develop)](https://travis-ci.com/Labs-EU4/lambda-door-server)
 [![Coverage Status](https://coveralls.io/repos/github/Labs-EU4/lambda-door-server/badge.svg?branch=develop)](https://coveralls.io/github/Labs-EU4/lambda-door-server?branch=develop)
 
-### About
+<!-- ### About
 
 The one-stop portal for Lambda graduates looking for company information in the quest for a job.
 
@@ -1289,7 +1289,7 @@ Remember that this project is licensed under the MIT license, and by submitting 
 
 ### Attribution
 
-These contribution guidelines have been adapted from [this good-Contributing.md-template](https://gist.github.com/PurpleBooth/b24679402957c63ec426).
+These contribution guidelines have been adapted from [this good-Contributing.md-template](https://gist.github.com/PurpleBooth/b24679402957c63ec426). -->
 
 ## Documentation
 
