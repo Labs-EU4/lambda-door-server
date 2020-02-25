@@ -25,7 +25,7 @@ server.use(
       `${process.env.FRONT_URL}`,
       'http://localhost:3000',
       'https://lambdadooreu4-staging.netlify.com',
-      'https://lambdadooreu4.netlify.com/',
+      'https://lambdadooreu4.netlify.com',
       '*',
     ],
     credentials: true,
