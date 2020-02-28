@@ -89,6 +89,19 @@ const addUseSalaryrReview = async (req, res) => {
   }
 };
 
+const getHighestPaidJobs = async (req, res) => {
+  try {
+    const jobsWithHighestSalary = await Reviews.getJobsWithHighestSalary();
+    return res.status(200).json(jobsWithHighestSalary)
+  } catch (error) {
+    Sentry.captureException(error);
+    return res.status(500).json({ 
+      error: error.message,
+      stack: error.stack
+     });
+  }
+}
+
 module.exports = {
   getSalaryReviews,
   getAvgSalaryReviewsByCompany,
@@ -98,4 +111,5 @@ module.exports = {
   findUserSalaryReviewById,
   addUseSalaryrReview,
   getSalaryReviewsByCompany,
+  getHighestPaidJobs
 };

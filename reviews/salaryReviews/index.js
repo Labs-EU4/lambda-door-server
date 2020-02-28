@@ -4,6 +4,7 @@ const validate = require('../../middleware/validation');
 
 const router = express.Router();
 router.get('/', reviews.getSalaryReviews);
+router.get('/highest', reviews.getHighestPaidJobs);
 router.get('/avg/:id', reviews.getAvgSalaryReviewsByCompany);
 router.post('/', reviews.addUseSalaryrReview);
 router.delete(
@@ -16,6 +17,8 @@ router.patch(
   validate.salaryReviewExists,
   reviews.updateUserSalaryrReview
 );
+
+
 router.get('/user/:id', validate.userExists, reviews.getUserSalaryReviews);
 router.get(
   '/:id',
@@ -23,6 +26,5 @@ router.get(
   reviews.findUserSalaryReviewById
 );
 router.get('/reviews/:id', reviews.getSalaryReviewsByCompany);
-router.get('/highest-paid-jobs', reviews.getHighestPaidJobs)
 
 module.exports = router;

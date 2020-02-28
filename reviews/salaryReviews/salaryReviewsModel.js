@@ -10,6 +10,7 @@ function getReviews() {
       'c.name as company_name',
       'sr.description',
       'sr.salary',
+      'sr.base_salary',
       'sr.currency',
       'sr.is_accepting_questions',
       'sr.is_anonymous',
@@ -120,19 +121,20 @@ function insertSalaryReview(review) {
 }
 
 function getJobsWithHighestSalary() {
-  return db('salary_reviews as sr')
-    .join('companies as c', 'c.id' = 'sr.company_id')
-    .orderBy('sr.base_salary', 'desc')
-    .select(
-      'sr.job_title',
-      'sr.base_salary',
-      'sr.salary',
-      'sr.currency',
-      'c.name as companyName'
-    )
+
+    return db('salary_reviews as sr')
+      .leftJoin('companies as c', 'c.id', 'sr.company_id')
+      .orderBy('sr.base_salary', 'desc')
+      .select(
+        'sr.job_title',
+        'sr.base_salary',
+        'sr.salary',
+        'sr.currency',
+        'c.name as companyName'
+      )
 }
 
-// SELECT 
+// SELECT
 //   sr.job_title,
 //   sr.base_salary,
 //   sr.salary,
