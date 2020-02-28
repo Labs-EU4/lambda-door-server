@@ -119,6 +119,30 @@ function insertSalaryReview(review) {
     });
 }
 
+function getJobsWithHighestSalary() {
+  return db('salary_reviews as sr')
+    .join('companies as c', 'c.id' = 'sr.company_id')
+    .orderBy('sr.base_salary', 'desc')
+    .select(
+      'sr.job_title',
+      'sr.base_salary',
+      'sr.salary',
+      'sr.currency',
+      'c.name as companyName'
+    )
+}
+
+// SELECT 
+//   sr.job_title,
+//   sr.base_salary,
+//   sr.salary,
+//   sr.currency,
+//   c.name AS companyName
+// FROM salary_reviews AS sr
+// join companies AS c
+// on c.id = sr.company_id
+// ORDER BY sr.base_salary DESC;
+
 module.exports = {
   getReviews,
   getAvgReviewsByCompany,
@@ -128,4 +152,5 @@ module.exports = {
   updateSalaryReview,
   insertSalaryReview,
   salaryReviewByCompanyId,
+  getJobsWithHighestSalary
 };

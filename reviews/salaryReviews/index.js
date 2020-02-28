@@ -23,5 +23,6 @@ router.get(
   reviews.findUserSalaryReviewById
 );
 router.get('/reviews/:id', reviews.getSalaryReviewsByCompany);
+router.get('/highest-paid-jobs', reviews.getHighestPaidJobs)
 
 module.exports = router;
