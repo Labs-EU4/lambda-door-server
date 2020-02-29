@@ -48,6 +48,7 @@ const testReview3 = {
   company_id: 1,
   description: 'Junior Developer',
   interest_id: 1,
+  base_salary: 8333,
   salary: 3000000,
   currency: 'NGN',
   is_accepting_questions: 1,
@@ -62,6 +63,7 @@ const testSalaryReviews = [
     company_id: 1,
     description: 'Junior Developer',
     interest_id: 1,
+    base_salary: 10833,
     salary: 3900000,
     currency: 'NGN',
     is_accepting_questions: 1,
@@ -75,6 +77,7 @@ const testSalaryReviews = [
     company_id: 1,
     description: 'Junior Developer',
     interest_id: 1,
+    base_salary: 9722,
     salary: 3500000,
     currency: 'NGN',
     is_accepting_questions: 1,
@@ -149,7 +152,7 @@ describe('salaryReviews router', () => {
         .send(testReview3)
         .expect(201);
 
-      expect(response.body.description).toBe('Junior Developer');
+      expect(response.body.job_title).toBe('Junior Dev');
     });
   });
 
