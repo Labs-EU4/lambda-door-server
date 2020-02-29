@@ -1,6 +1,7 @@
 exports.up = function(knex) {
   return knex.schema.table('salary_reviews', table => {
-    table.string('job_title');
+    table.string('job_title')
+      .notNullable();
     table.boolean('is_anonymous');
   });
 };

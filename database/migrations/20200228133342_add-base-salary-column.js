@@ -1,7 +1,8 @@
 
 exports.up = function (knex) {
   return knex.schema.table('salary_reviews', table => {
-    table.float('base_salary');
+    table.float('base_salary')
+      .notNullable();
   });
 };
 

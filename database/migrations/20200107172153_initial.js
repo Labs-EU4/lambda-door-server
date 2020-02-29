@@ -1,4 +1,4 @@
-exports.up = function(knex) {
+exports.up = function (knex) {
   return knex.schema
     .createTable('users', table => {
       table.increments('id');
@@ -124,15 +124,17 @@ exports.up = function(knex) {
         .inTable('interests')
         .onDelete('CASCADE')
         .onUpdate('CASCADE');
-      table.float('salary');
-      table.varchar('currency');
+      table.float('salary')
+        .notNullable();
+      table.varchar('currency')
+        .notNullable();
       table.boolean('is_accepting_questions');
       table.boolean('is_current_employee');
       table.timestamps('created_at');
     });
 };
 
-exports.down = function(knex) {
+exports.down = function (knex) {
   return knex.schema
     .dropTableIfExists('salary_reviews')
     .dropTableIfExists('interview_process_reviews')

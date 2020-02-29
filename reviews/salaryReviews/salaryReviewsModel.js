@@ -83,13 +83,15 @@ function findSalaryReviewById(id) {
       'sr.company_id',
       'sr.description',
       'sr.salary',
+      'sr.base_salary',
+      'sr.job_title',
       'sr.currency',
       'i.interest',
-      'interest_id as i.id',
+      'interest_id',
       'sr.is_accepting_questions',
       'sr.is_current_employee',
       'sr.is_anonymous',
-      'c.name',
+      'c.name as company_name',
       'users.full_name'
     )
     .from('salary_reviews as sr')
@@ -133,17 +135,6 @@ function getJobsWithHighestSalary() {
         'c.name as companyName'
       )
 }
-
-// SELECT
-//   sr.job_title,
-//   sr.base_salary,
-//   sr.salary,
-//   sr.currency,
-//   c.name AS companyName
-// FROM salary_reviews AS sr
-// join companies AS c
-// on c.id = sr.company_id
-// ORDER BY sr.base_salary DESC;
 
 module.exports = {
   getReviews,
