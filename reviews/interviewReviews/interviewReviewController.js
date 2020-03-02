@@ -48,9 +48,17 @@ const findUserInterviewReviewById = async (req, res) => {
 
 const updateUserInterviewReview = async (req, res) => {
   const { id } = req.params;
-  const changes = req.body;
   try {
-    await Reviews.updateInterviewReview(id, changes);
+    await Reviews.updateInterviewReview(id, {
+      user_id: req.body.user_id,
+      company_id: req.body.company_id,
+      text: req.body.text,
+      is_accepting_questions: req.body.is_accepting_questions,
+      is_current_employee: req.body.is_current_employee,
+      created_at: req.body.created_at,
+      job_title: req.body.job_title,
+      interest_id: req.body.interest_id,
+    });
     const updatedReview = await Reviews.findInterviewReviewById(id);
     return res.status(200).json(updatedReview);
   } catch (error) {
@@ -60,25 +68,15 @@ const updateUserInterviewReview = async (req, res) => {
 };
 const addInterviewReview = async (req, res) => {
   try {
-    const {
-      user_id,
-      company_id,
-      text,
-      created_at,
-      is_accepting_questions,
-      is_current_employee,
-      job_title,
-      interest_id,
-    } = req.body;
     const review = await Reviews.insertInterviewReview({
-      user_id,
-      company_id,
-      text,
-      is_accepting_questions,
-      is_current_employee,
-      created_at,
-      job_title,
-      interest_id,
+      user_id: req.body.user_id,
+      company_id: req.body.company_id,
+      text: req.body.text,
+      is_accepting_questions: req.body.is_accepting_questions,
+      is_current_employee: req.body.is_current_employee,
+      created_at: req.body.created_at,
+      job_title: req.body.job_title,
+      interest_id: req.body.interest_id,
     });
     return res.status(201).json(review);
   } catch (error) {

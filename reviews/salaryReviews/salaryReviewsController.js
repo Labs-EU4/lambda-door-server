@@ -66,11 +66,21 @@ const findUserSalaryReviewById = async (req, res) => {
   }
 };
 
-const updateUserSalaryrReview = async (req, res) => {
+const updateUserSalaryReview = async (req, res) => {
   const { id } = req.params;
-  const changes = req.body;
   try {
-    await Reviews.updateSalaryReview(id, changes);
+    await Reviews.updateSalaryReview(id, {
+      company_id: req.body.company_id,
+      currency: req.body.currency,
+      description: req.body.description,
+      interest_id: req.body.interest_id,
+      is_accepting_questions: req.body.is_accepting_questions,
+      is_anonymous: req.body.is_anonymous,
+      is_current_employee: req.body.is_current_employee,
+      job_title: req.body.job_title,
+      salary: req.body.salary,
+      user_id: req.body.user_id,
+    });
     const updatedReview = await Reviews.findSalaryReviewById(id);
     return res.status(200).json(updatedReview);
   } catch (error) {
@@ -78,10 +88,20 @@ const updateUserSalaryrReview = async (req, res) => {
     return res.status(500).json({ error: error.message });
   }
 };
-const addUseSalaryrReview = async (req, res) => {
+const addUseSalaryReview = async (req, res) => {
   try {
-    const newUserReview = req.body;
-    const review = await Reviews.insertSalaryReview(newUserReview);
+    const review = await Reviews.insertSalaryReview({
+      company_id: req.body.company_id,
+      currency: req.body.currency,
+      description: req.body.description,
+      interest_id: req.body.interest_id,
+      is_accepting_questions: req.body.is_accepting_questions,
+      is_anonymous: req.body.is_anonymous,
+      is_current_employee: req.body.is_current_employee,
+      job_title: req.body.job_title,
+      salary: req.body.salary,
+      user_id: req.body.user_id,
+    });
     return res.status(201).json(review);
   } catch (error) {
     Sentry.captureException(error);
@@ -94,8 +114,8 @@ module.exports = {
   getAvgSalaryReviewsByCompany,
   getUserSalaryReviews,
   deleteUserSalaryReview,
-  updateUserSalaryrReview,
+  updateUserSalaryReview,
   findUserSalaryReviewById,
-  addUseSalaryrReview,
+  addUseSalaryReview,
   getSalaryReviewsByCompany,
 };
