@@ -73,13 +73,13 @@ const updateUserSalaryReview = async (req, res) => {
       company_id: req.body.company_id,
       currency: req.body.currency,
       description: req.body.description,
-      interest_id: req.body.interest_id,
       is_accepting_questions: req.body.is_accepting_questions,
       is_anonymous: req.body.is_anonymous,
       is_current_employee: req.body.is_current_employee,
       job_title: req.body.job_title,
       salary: req.body.salary,
       user_id: req.body.user_id,
+      employment_type: req.body.employment_type,
     });
     const updatedReview = await Reviews.findSalaryReviewById(id);
     return res.status(200).json(updatedReview);
@@ -94,13 +94,13 @@ const addUseSalaryReview = async (req, res) => {
       company_id: req.body.company_id,
       currency: req.body.currency,
       description: req.body.description,
-      interest_id: req.body.interest_id,
       is_accepting_questions: req.body.is_accepting_questions,
       is_anonymous: req.body.is_anonymous,
       is_current_employee: req.body.is_current_employee,
       job_title: req.body.job_title,
       salary: req.body.salary,
       user_id: req.body.user_id,
+      employment_type: req.body.employment_type,
     });
     return res.status(201).json(review);
   } catch (error) {

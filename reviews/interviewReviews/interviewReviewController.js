@@ -57,7 +57,6 @@ const updateUserInterviewReview = async (req, res) => {
       is_current_employee: req.body.is_current_employee,
       created_at: req.body.created_at,
       job_title: req.body.job_title,
-      interest_id: req.body.interest_id,
     });
     const updatedReview = await Reviews.findInterviewReviewById(id);
     return res.status(200).json(updatedReview);
@@ -76,7 +75,6 @@ const addInterviewReview = async (req, res) => {
       is_current_employee: req.body.is_current_employee,
       created_at: req.body.created_at,
       job_title: req.body.job_title,
-      interest_id: req.body.interest_id,
     });
     return res.status(201).json(review);
   } catch (error) {
