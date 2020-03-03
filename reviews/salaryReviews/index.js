@@ -6,7 +6,7 @@ const router = express.Router();
 router.get('/', reviews.getSalaryReviews);
 router.get('/highest', reviews.getHighestPaidJobs);
 router.get('/avg/:id', reviews.getAvgSalaryReviewsByCompany);
-router.post('/', reviews.addUseSalaryrReview);
+router.post('/', reviews.addUseSalaryReview);
 router.delete(
   '/:id',
   validate.salaryReviewExists,
@@ -15,7 +15,7 @@ router.delete(
 router.patch(
   '/:id',
   validate.salaryReviewExists,
-  reviews.updateUserSalaryrReview
+  reviews.updateUserSalaryReview
 );
 
 

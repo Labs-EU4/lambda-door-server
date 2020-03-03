@@ -758,7 +758,6 @@ Returns
     is_accepting_questions: false,
     is_anonymous: false,
     job_title: 'Accenture Programmer',
-    interest_id: 2,
   },
 ];
 ```
@@ -895,7 +894,6 @@ Returns
     description: 'Software Engineer',
     salary: 95000,
     currency: 'USD',
-    interest_id: 2,
     interest: 'Front End',
     name: 'Accenture',
     is_accepting_questions: false,
@@ -907,7 +905,6 @@ Returns
     description: 'Backend Engineer',
     salary: 85000,
     currency: 'USD',
-    interest_id: 4,
     interest: 'Full Stack',
     name: 'Accenture',
     is_accepting_questions: true,
@@ -1187,7 +1184,6 @@ Returns
     text: null,
     description:
       'Paystack helps businesses in Africa get paid by anyone, anywhere in the world',
-    interest_id: 1,
     salary: 3000000,
     currency: 'Nigerian Naira',
     is_accepting_questions: true,
@@ -1229,7 +1225,6 @@ Returns
     is_accepting_questions: false,
     is_current_employee: false,
     job_title: null,
-    interest_id: 2,
     interest: 'Front End',
     name: 'Newfront Insurance',
     website: 'https://www.newfrontinsurance.com',

@@ -4,7 +4,6 @@ exports.seed = function(knex) {
     {
       user_id: 4,
       company_id: 1,
-      interest_id: 2,
       description: 'Software Engineer',
       job_title: 'Accenture Programmer',
       currency: 'US Dollar',
@@ -17,7 +16,6 @@ exports.seed = function(knex) {
     {
       user_id: 2,
       company_id: 3,
-      interest_id: 1,
       job_title: 'Software Engineer',
       description: 'Software Engineer',
       currency: 'US Dollar',
@@ -32,7 +30,7 @@ exports.seed = function(knex) {
       company_id: 10,
       job_title: 'Junior Developer',
       description: 'Junior Developer',
-      interest_id: 1,
+      salary: 3000000,
       currency: 'Nigerian Naira',
       salary: 3000000,
       base_salary: 8333,
@@ -43,7 +41,6 @@ exports.seed = function(knex) {
     {
       user_id: 4,
       company_id: 3,
-      interest_id: 4,
       description: 'Software Engineer',
       job_title: 'Accenture Technical Specialist',
       currency: 'US Dollar',
@@ -56,7 +53,6 @@ exports.seed = function(knex) {
     {
       user_id: 5,
       company_id: 13,
-      interest_id: 1,
       job_title: 'Software Engineer',
       description: 'Software Engineer',
       currency: 'Nigerian Naira',
@@ -69,7 +65,6 @@ exports.seed = function(knex) {
     {
       user_id: 4,
       company_id: 1,
-      interest_id: 4,
       description: 'Backend Engineer',
       job_title: 'Senior Backend Expert',
       currency: 'US Dollar',
@@ -81,7 +76,6 @@ exports.seed = function(knex) {
     {
       user_id: 3,
       company_id: 1,
-      interest_id: 4,
       description: 'Backend Engineer',
       job_title: 'Server expert',
       currency: 'US Dollar',

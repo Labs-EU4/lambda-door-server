@@ -47,7 +47,6 @@ const testReview3 = {
   user_id: 1,
   company_id: 1,
   description: 'Junior Developer',
-  interest_id: 1,
   base_salary: 8333,
   salary: 3000000,
   currency: 'NGN',
@@ -55,6 +54,7 @@ const testReview3 = {
   is_current_employee: 1,
   is_anonymous: 1,
   job_title: 'Junior Dev',
+  employment_type: 2,
 };
 
 const testSalaryReviews = [
@@ -62,7 +62,6 @@ const testSalaryReviews = [
     user_id: 3,
     company_id: 1,
     description: 'Junior Developer',
-    interest_id: 1,
     base_salary: 10833,
     salary: 3900000,
     currency: 'NGN',
@@ -70,13 +69,13 @@ const testSalaryReviews = [
     is_current_employee: 1,
     is_anonymous: 1,
     job_title: 'Junior Dev',
+    employment_type: 1,
   },
 
   {
     user_id: 2,
     company_id: 1,
     description: 'Junior Developer',
-    interest_id: 1,
     base_salary: 9722,
     salary: 3500000,
     currency: 'NGN',
@@ -84,6 +83,7 @@ const testSalaryReviews = [
     is_current_employee: 1,
     is_anonymous: 1,
     job_title: 'Junior Dev',
+    employment_type: 4,
   },
 ];
 
