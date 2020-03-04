@@ -34,7 +34,6 @@ const testCompany2 = {
 const testReview2 = {
   user_id: 1,
   company_id: 1,
-  interest_id: 1,
   description: 'Acidic Scientist',
   salary: 95000,
   currency: 'USD',
