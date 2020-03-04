@@ -101,6 +101,7 @@ const addUseSalaryReview = async (req, res) => {
       salary: req.body.salary,
       user_id: req.body.user_id,
       employment_type: req.body.employment_type,
+      base_salary: req.body.base_salary,
     });
     return res.status(201).json(review);
   } catch (error) {
@@ -108,6 +109,19 @@ const addUseSalaryReview = async (req, res) => {
     return res.status(500).json({ error: error.message });
   }
 };
+
+const getHighestPaidJobs = async (req, res) => {
+  try {
+    const jobsWithHighestSalary = await Reviews.getJobsWithHighestSalary();
+    return res.status(200).json(jobsWithHighestSalary)
+  } catch (error) {
+    Sentry.captureException(error);
+    return res.status(500).json({ 
+      error: error.message,
+      stack: error.stack
+     });
+  }
+}
 
 module.exports = {
   getSalaryReviews,
@@ -118,4 +132,5 @@ module.exports = {
   findUserSalaryReviewById,
   addUseSalaryReview,
   getSalaryReviewsByCompany,
+  getHighestPaidJobs
 };

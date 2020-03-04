@@ -66,6 +66,7 @@ const testInterviewReview = {
 const testSalaryReview = {
   user_id: 1,
   company_id: 1,
+  base_salary: 8333,
   description: 'Software Engineer',
   salary: 3000000,
   currency: 'Nigerian Naira',

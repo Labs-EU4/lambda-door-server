@@ -35,6 +35,8 @@ const testReview2 = {
   user_id: 1,
   company_id: 1,
   description: 'Acidic Scientist',
+  base_salary: 95000,
+  job_title: 'Acid Tester',
   salary: 95000,
   currency: 'USD',
   is_accepting_questions: 0,
