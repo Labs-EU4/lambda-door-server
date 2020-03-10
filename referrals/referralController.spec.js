@@ -13,8 +13,7 @@ describe('referralRouter', () => {
   describe('POST /referral', () => {
     jest.spyOn(referrals, 'sendMail').mockImplementation();
     test('returns a 200 response if request sent succesfully', async () => {
-      const response = await request(server)
-        .post('/referral')
+      const response = await request(server).post('/referral')
         .send(testReferral)
         .expect(200);
 
@@ -22,8 +21,7 @@ describe('referralRouter', () => {
     });
 
     test("returns a 500 if the request doesn't have a body", async () => {
-      await request(server)
-        .post('/referral')
+      await request(server).post('/referral')
         .expect(500);
     });
   });

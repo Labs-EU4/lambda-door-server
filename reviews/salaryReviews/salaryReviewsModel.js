@@ -10,11 +10,11 @@ function getReviews() {
       'c.name as company_name',
       'sr.description',
       'sr.salary',
+      'sr.base_salary',
       'sr.currency',
       'sr.is_accepting_questions',
       'sr.is_anonymous',
       'sr.job_title',
-      'sr.interest_id',
       'users.full_name'
     )
     .from('salary_reviews as sr')
@@ -24,11 +24,10 @@ function getReviews() {
 
 function getAvgReviewsByCompany(id) {
   return db
-    .select('sr.interest_id', 'i.interest', 'sr.currency')
+    .select('sr.currency')
     .from('salary_reviews as sr')
-    .leftJoin('interests as i', 'sr.interest_id', 'i.id')
     .avg('salary')
-    .groupBy('sr.interest_id', 'i.interest', 'sr.currency')
+    .groupBy('sr.currency')
     .where('company_id', '=', id);
 }
 
@@ -38,9 +37,9 @@ function salaryReviewByCompanyId(id) {
       'sr.id',
       'sr.description',
       'sr.salary',
+      'sr.base_salary',
+      'sr.job_title',
       'sr.currency',
-      'sr.interest_id',
-      'i.interest',
       'c.name',
       'sr.is_accepting_questions',
       'sr.is_anonymous',
@@ -49,7 +48,6 @@ function salaryReviewByCompanyId(id) {
     )
     .from('companies as c')
     .join('salary_reviews as sr', 'sr.company_id', 'c.id')
-    .leftJoin('interests as i', 'sr.interest_id', 'i.id')
     .leftJoin('users', 'users.id', 'sr.user_id')
     .where('c.id', '=', id);
 }
@@ -61,9 +59,10 @@ function getUsersSalaryReviews(id) {
       'sr.company_id',
       'sr.description',
       'sr.salary',
+      'sr.user_id',
+      'sr.base_salary',
+      'sr.job_title',
       'sr.currency',
-      'i.interest',
-      'interest_id as i.id',
       'sr.is_accepting_questions',
       'sr.is_current_employee',
       'sr.is_anonymous',
@@ -71,7 +70,6 @@ function getUsersSalaryReviews(id) {
     )
     .from('salary_reviews as sr')
     .join('companies as c', 'c.id', 'sr.company_id')
-    .leftJoin('interests as i', 'sr.interest_id', 'i.id')
     .where('sr.user_id', '=', id);
 }
 
@@ -82,18 +80,17 @@ function findSalaryReviewById(id) {
       'sr.company_id',
       'sr.description',
       'sr.salary',
+      'sr.base_salary',
+      'sr.job_title',
       'sr.currency',
-      'i.interest',
-      'interest_id as i.id',
       'sr.is_accepting_questions',
       'sr.is_current_employee',
       'sr.is_anonymous',
-      'c.name',
+      'c.name as company_name',
       'users.full_name'
     )
     .from('salary_reviews as sr')
     .join('companies as c', 'sr.company_id', 'c.id')
-    .leftJoin('interests as i', 'sr.interest_id', 'i.id')
     .leftJoin('users', 'users.id', 'sr.user_id')
     .where('sr.id', '=', id)
     .first();
@@ -119,6 +116,20 @@ function insertSalaryReview(review) {
     });
 }
 
+function getJobsWithHighestSalary() {
+
+    return db('salary_reviews as sr')
+      .leftJoin('companies as c', 'c.id', 'sr.company_id')
+      .orderBy('sr.base_salary', 'desc')
+      .select(
+        'sr.job_title',
+        'sr.base_salary',
+        'sr.salary',
+        'sr.currency',
+        'c.name as companyName'
+      )
+}
+
 module.exports = {
   getReviews,
   getAvgReviewsByCompany,
@@ -128,4 +139,5 @@ module.exports = {
   updateSalaryReview,
   insertSalaryReview,
   salaryReviewByCompanyId,
+  getJobsWithHighestSalary
 };

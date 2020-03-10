@@ -63,14 +63,13 @@ const testInterviewReview = {
   is_accepting_questions: 0,
   is_current_employee: 0,
   job_title: null,
-  interest_id: 1,
 };
 
 const testSalaryReview = {
   user_id: 1,
   company_id: 1,
-  description: 'Sofware Engineer',
-  interest_id: 1,
+  base_salary: 8333,
+  description: 'Software Engineer',
   salary: 3000000,
   currency: 'Nigerian Naira',
   is_accepting_questions: 0,

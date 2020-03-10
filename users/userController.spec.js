@@ -3,7 +3,6 @@ const db = require('../database/db-config');
 const server = require('../api/server');
 
 beforeAll(async () => {
-
   // await db.raw('TRUNCATE users RESTART IDENTITY CASCADE');
 });
 
@@ -18,16 +17,13 @@ describe('userRouter', () => {
   let cookie;
   describe('POST /users/', () => {
     test('returns a 201 response after adding new user', async () => {
-      const response = await request(server)
-        .post('/users/')
+      const response = await request(server).post('/users/')
         .send(testUser)
         .expect(201);
       cookie = response.headers['set-cookie'];
     });
-
     test('returns a 200 if user already exists', async () => {
-      const response = await request(server)
-        .post('/users/')
+      const response = await request(server).post('/users/')
         .send(testUser)
         .expect(200);
       cookie = response.headers['set-cookie'];
@@ -35,25 +31,21 @@ describe('userRouter', () => {
   });
   describe('GET /users/:id', () => {
     test('returns a 200 response', async () => {
-      await request(server)
-        .get('/users/1')
+      await request(server).get('/users/1')
         .set('Cookie', cookie)
         .expect('Content-Type', /json/)
         .expect(200);
     });
     test('returns an error when user does not exist', async () => {
-      await request(server)
-        .get('/users/10')
+      await request(server).get('/users/10')
         .set('Cookie', cookie)
         .expect(400)
         .expect({ error: 'User does not exist' });
-
     });
   });
   describe('PUT /users/:id', () => {
     test('returns an error when user does not exist', async () => {
-      const response = await request(server)
-        .patch('/users/6')
+      const response = await request(server).patch('/users/60')
         .send({
           full_name: 'Test 2',
         })
@@ -62,8 +54,7 @@ describe('userRouter', () => {
       expect(response.status).toEqual(400);
     });
     test('updates name successfully', async () => {
-      await request(server)
-        .patch('/users/1')
+      await request(server).patch('/users/1')
         .send({
           full_name: 'Test 1',
         })
@@ -82,4 +73,4 @@ describe('userRouter', () => {
 
 afterAll(async () => {
   await db.raw('TRUNCATE users RESTART IDENTITY CASCADE');
-});
+})

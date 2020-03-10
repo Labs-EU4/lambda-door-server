@@ -1,9 +1,9 @@
 # LambdaDoor API
 
-[![Build Status](https://travis-ci.com/LABS-EU3/lambdaDoor_backend.svg?branch=develop)](https://travis-ci.com/LABS-EU3/lambdaDoor_backend)
-[![Coverage Status](https://coveralls.io/repos/github/LABS-EU3/lambdaDoor_backend/badge.svg?branch=develop)](https://coveralls.io/github/LABS-EU3/lambdaDoor_backend?branch=develop)
+[![Build Status](https://travis-ci.com/Labs-EU4/lambda-door-server.svg?branch=develop)](https://travis-ci.com/Labs-EU4/lambda-door-server)
+[![Coverage Status](https://coveralls.io/repos/github/Labs-EU4/lambda-door-server/badge.svg?branch=develop)](https://coveralls.io/github/Labs-EU4/lambda-door-server?branch=develop)
 
-### About
+<!-- ### About
 
 The one-stop portal for Lambda graduates looking for company information in the quest for a job.
 
@@ -758,7 +758,6 @@ Returns
     is_accepting_questions: false,
     is_anonymous: false,
     job_title: 'Accenture Programmer',
-    interest_id: 2,
   },
 ];
 ```
@@ -895,7 +894,6 @@ Returns
     description: 'Software Engineer',
     salary: 95000,
     currency: 'USD',
-    interest_id: 2,
     interest: 'Front End',
     name: 'Accenture',
     is_accepting_questions: false,
@@ -907,7 +905,6 @@ Returns
     description: 'Backend Engineer',
     salary: 85000,
     currency: 'USD',
-    interest_id: 4,
     interest: 'Full Stack',
     name: 'Accenture',
     is_accepting_questions: true,
@@ -1187,7 +1184,6 @@ Returns
     text: null,
     description:
       'Paystack helps businesses in Africa get paid by anyone, anywhere in the world',
-    interest_id: 1,
     salary: 3000000,
     currency: 'Nigerian Naira',
     is_accepting_questions: true,
@@ -1229,7 +1225,6 @@ Returns
     is_accepting_questions: false,
     is_current_employee: false,
     job_title: null,
-    interest_id: 2,
     interest: 'Front End',
     name: 'Newfront Insurance',
     website: 'https://www.newfrontinsurance.com',
@@ -1289,8 +1284,8 @@ Remember that this project is licensed under the MIT license, and by submitting 
 
 ### Attribution
 
-These contribution guidelines have been adapted from [this good-Contributing.md-template](https://gist.github.com/PurpleBooth/b24679402957c63ec426).
+These contribution guidelines have been adapted from [this good-Contributing.md-template](https://gist.github.com/PurpleBooth/b24679402957c63ec426). -->
 
 ## Documentation
 
-See [Frontend Documentation](https://github.com/LABS-EU3/lambdaDoor_frontend) for details on the frontend of our project.
+See [Frontend Documentation](https://github.com/Labs-EU4/lambda-door-client) for details on the frontend of our project.
