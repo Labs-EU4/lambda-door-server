@@ -106,3 +106,6 @@ dist
 
 # Stores VSCode versions used for testing VSCode extensions
 .vscode-test
+
+lambda-door-firebase-adminsdk-v0gus-07f70049ac.json
+lambda-door-production-firebase-adminsdk-6qlhx-7cf34d4bf8.json
