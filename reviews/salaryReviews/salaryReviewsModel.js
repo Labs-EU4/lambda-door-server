@@ -37,6 +37,7 @@ function salaryReviewByCompanyId(id) {
       'sr.id',
       'sr.description',
       'sr.salary',
+      'sr.user_id',
       'sr.base_salary',
       'sr.job_title',
       'sr.currency',
@@ -78,6 +79,7 @@ function findSalaryReviewById(id) {
     .select(
       'sr.id',
       'sr.company_id',
+      'sr.user_id',
       'sr.description',
       'sr.salary',
       'sr.base_salary',
@@ -117,17 +119,16 @@ function insertSalaryReview(review) {
 }
 
 function getJobsWithHighestSalary() {
-
-    return db('salary_reviews as sr')
-      .leftJoin('companies as c', 'c.id', 'sr.company_id')
-      .orderBy('sr.base_salary', 'desc')
-      .select(
-        'sr.job_title',
-        'sr.base_salary',
-        'sr.salary',
-        'sr.currency',
-        'c.name as companyName'
-      )
+  return db('salary_reviews as sr')
+    .leftJoin('companies as c', 'c.id', 'sr.company_id')
+    .orderBy('sr.base_salary', 'desc')
+    .select(
+      'sr.job_title',
+      'sr.base_salary',
+      'sr.salary',
+      'sr.currency',
+      'c.name as companyName'
+    );
 }
 
 module.exports = {
@@ -139,5 +140,5 @@ module.exports = {
   updateSalaryReview,
   insertSalaryReview,
   salaryReviewByCompanyId,
-  getJobsWithHighestSalary
+  getJobsWithHighestSalary,
 };
