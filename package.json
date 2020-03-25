@@ -12,7 +12,8 @@
     "seed": "npx knex seed:run",
     "test": "cross-env DB_ENV=test jest --coverage --ci --runInBand --detectOpenHandles --forceExit",
     "ci:test": "cross-env DB_ENV=ci jest --coverage --ci --runInBand --detectOpenHandles --forceExit",
-    "coverage": "nyc report --reporter=text-lcov | coveralls && nyc report --reporter=lcov"
+    "coverage": "nyc report --reporter=text-lcov | coveralls && nyc report --reporter=lcov",
+    "email": "node chats/emailCron.js"
   },
   "repository": {
     "type": "git",

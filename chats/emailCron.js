@@ -1,5 +1,4 @@
 const admin = require('firebase-admin');
-const { CronJob } = require('cron');
 // const serviceAccount = require('../lambda-door-firebase-adminsdk-v0gus-07f70049ac.json');
 const serviceAccount = require('../lambda-door-production-firebase-adminsdk-6qlhx-7cf34d4bf8.json');
 const { getUserByID } = require('./emailCronModel');
