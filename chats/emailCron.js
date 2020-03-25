@@ -5,7 +5,14 @@ const serviceAccount = require('../lambda-door-production-firebase-adminsdk-6qlh
 const { getUserByID } = require('./emailCronModel');
 const transporter = require('./nodemailer');
 
-serviceAccount.private_key = process.env.FIREBASE_PRIVATE_KEY;
+// serviceAccount.private_key = process.env.FIREBASE_PRIVATE_KEY.replace(
+//   /\\n/g,
+//   '\n'
+// );
+serviceAccount.private_key = process.env.FIREBASE_PRIVATE_KEY_PRODUCTION.replace(
+  /\\n/g,
+  '\n'
+);
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
