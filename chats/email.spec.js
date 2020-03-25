@@ -3,9 +3,8 @@ const serviceAccount = require('../lambda-door-firebase-adminsdk-v0gus-07f70049a
 
 require('dotenv').config();
 
-serviceAccount.private_key = process.env.FIREBASE_PRIVATE_KEY.replace(
-  /\\n/g,
-  '\n'
+serviceAccount.private_key = atob(
+  process.env.FIREBASE_PRIVATE_KEY.replace(/\\n/g, '\n')
 );
 
 admin.initializeApp({
