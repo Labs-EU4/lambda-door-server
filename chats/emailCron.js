@@ -41,7 +41,7 @@ db.collection('chats')
             const currentTime = Math.trunc(new Date().getTime() / 1000);
 
             // const limitInSeconds = 12 * 60 * 60;
-            const limitInSeconds = 60 * 5;
+            const limitInSeconds = 60 * 1;
             // lets do Math!
             if (currentTime - messageTime > limitInSeconds) {
               // uncomment this code
