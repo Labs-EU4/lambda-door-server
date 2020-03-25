@@ -1,4 +1,5 @@
 const admin = require('firebase-admin');
+const atob = require('atob');
 const serviceAccount = require('../lambda-door-firebase-adminsdk-v0gus-07f70049ac.json');
 
 require('dotenv').config();
