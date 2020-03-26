@@ -112,7 +112,7 @@ The API endpoints for the server is on Heroku and can be found [here.](https://l
 
 ### Add a new user [POST]
 
-**URL**: _https://lambdadooreu4-staging.herokuapp.com//users_
+**URL**: _https://lambdadooreu4-staging.herokuapp.com/users_
 
 **Returns**: An object containing the user credentials.
 
@@ -145,7 +145,7 @@ Input
 
 ### Edit User[PATCH]
 
-**URL**: _https://lambdadooreu4-staging.herokuapp.com//users/16_
+**URL**: _https://lambdadooreu4-staging.herokuapp.com/users/16_
 
 **Returns**: An array containing an object which holds the users credentials.
 
@@ -179,7 +179,7 @@ Returns
 
 ### Get a user [GET]
 
-**URL**: _https://lambdadooreu4-staging.herokuapp.com//users/16_
+**URL**: _https://lambdadooreu4-staging.herokuapp.com/users/16_
 
 **Returns**: An object with the user details
 
@@ -218,7 +218,7 @@ Returns
 
 ### Get all interests [GET]
 
-**URL**: _https://lambdadooreu4-staging.herokuapp.com//interests_
+**URL**: _https://lambdadooreu4-staging.herokuapp.com/interests_
 
 **Returns**: An Array with interest listed in the database
 
@@ -261,7 +261,7 @@ Returns
 
 ### Get a single interest by ID [GET]
 
-**URL**: _https://lambdadooreu4-staging.herokuapp.com//interests/:id_
+**URL**: _https://lambdadooreu4-staging.herokuapp.com/interests/:id_
 
 **Returns**: An object of a chosen interest.
 
@@ -274,7 +274,7 @@ Returns
 
 ### Get user's interests [GET]
 
-**URL**: _https://lambdadooreu4-staging.herokuapp.com//interests/user/:id_
+**URL**: _https://lambdadooreu4-staging.herokuapp.com/interests/user/:id_
 
 **Returns**: An array of all interest of the user .
 
@@ -300,7 +300,7 @@ Returns
 
 ### Get interests [GET]
 
-**URL**: _https://lambdadooreu4-staging.herokuapp.com//interests/ui/:id_
+**URL**: _https://lambdadooreu4-staging.herokuapp.com/interests/ui/:id_
 
 **Returns**: An object of interest with the name of the interest and the interest id linked to the user.
 
@@ -315,7 +315,7 @@ Returns
 
 ### Post User interest [POST]
 
-**URL**: _https://lambdadooreu4-staging.herokuapp.com//interests/_
+**URL**: _https://lambdadooreu4-staging.herokuapp.com/interests/_
 
 **Reaturn**: An array of the users intersts along with the new addition.
 
@@ -347,7 +347,7 @@ Output
 
 ### delete User interest [DELETE]
 
-**URL**: _https://lambdadooreu4-staging.herokuapp.com//interests/_
+**URL**: _https://lambdadooreu4-staging.herokuapp.com/interests/_
 
 **Reaturn**: A message os successful deletion along with an an object of the deleted interest.
 
@@ -399,7 +399,7 @@ Output
 
 ### Get all companies [GET]
 
-**URL**: \_https://lambdadooreu4-staging.herokuapp.com//companies
+**URL**: \_https://lambdadooreu4-staging.herokuapp.com/companies
 
 **Returns**: An array of companies in the db with their details and average rating
 
@@ -428,7 +428,7 @@ Returns
 
 ### Get top-rated companies [GET]
 
-**URL**: \_https://lambdadooreu4-staging.herokuapp.com//companies/top
+**URL**: \_https://lambdadooreu4-staging.herokuapp.com/companies/top
 
 **Returns**: An array of the five top-rated companies in the db and their average rating
 
@@ -449,7 +449,7 @@ Returns
 
 ### Get closest companies to the user's location [GET]
 
-**URL**: \_https://lambdadooreu4-staging.herokuapp.com//companies/:id/closest
+**URL**: \_https://lambdadooreu4-staging.herokuapp.com/companies/:id/closest
 
 **Returns**: An array of the closest companies to the user's location
 
@@ -472,7 +472,7 @@ Returns
 
 ### Get a company by Id [GET]
 
-**URL**: _https://lambdadooreu4-staging.herokuapp.com//companies/1_
+**URL**: _https://lambdadooreu4-staging.herokuapp.com/companies/1_
 
 **Returns**: An object which holds the company details and average rating
 
@@ -495,7 +495,7 @@ Returns
 
 ### Update a company Info by Id [PATCH]
 
-**URL**: _https://lambdadooreu4-staging.herokuapp.com//companies/1_
+**URL**: _https://lambdadooreu4-staging.herokuapp.com/companies/1_
 **Headers** : passcode = process.env.ADMIN_PREVILEGE_TOKEN
 
 **Returns**: An object which holds the company details and average rating
@@ -519,7 +519,7 @@ Returns
 
 ### Adds a new Company [POST]
 
-**URL**: \_https://lambdadooreu4-staging.herokuapp.com//companies/
+**URL**: \_https://lambdadooreu4-staging.herokuapp.com/companies/
 
 **Returns**: An object containing the company that was posted
 
@@ -589,7 +589,7 @@ Returns
 
 ### Get all of the user's reviews [GET]
 
-**URL**: _https://lambdadooreu4-staging.herokuapp.com//companyreviews/user/:id_
+**URL**: _https://lambdadooreu4-staging.herokuapp.com/companyreviews/user/:id_
 
 **Returns**: An array of the user's reviews
 
@@ -615,7 +615,7 @@ Returns
 
 ### Get a review by review id [GET]
 
-**URL**: _https://lambdadooreu4-staging.herokuapp.com//companyreviews/:id_
+**URL**: _https://lambdadooreu4-staging.herokuapp.com/companyreviews/:id_
 
 **Returns**: The selected review.
 
@@ -641,7 +641,7 @@ Returns
 
 ### Update an individual review [PATCH]
 
-**URL**: _https://lambdadooreu4-staging.herokuapp.com//companyreviews/:id_
+**URL**: _https://lambdadooreu4-staging.herokuapp.com/companyreviews/:id_
 
 **Returns**: The updated review.
 
@@ -665,13 +665,13 @@ Returns
 
 ### Delete a user's review [DELETE]
 
-**URL**: _https://lambdadooreu4-staging.herokuapp.com//companyreviews/:id_
+**URL**: _https://lambdadooreu4-staging.herokuapp.com/companyreviews/:id_
 
 **Returns**: A 204 status
 
 ### Add a user's review [POST]
 
-**URL**: _https://lambdadooreu4-staging.herokuapp.com//companyreviews/:id_
+**URL**: _https://lambdadooreu4-staging.herokuapp.com/companyreviews/:id_
 
 **Returns**: A 201 status and The added Review
 
@@ -695,7 +695,7 @@ Returns
 
 ### Get a single company's reviews [GET]
 
-**URL**: \_https://lambdadooreu4-staging.herokuapp.com//companyreviews/reviews/:id
+**URL**: \_https://lambdadooreu4-staging.herokuapp.com/companyreviews/reviews/:id
 
 **Returns**: An array of a selected company's various reviews.
 
@@ -751,7 +751,7 @@ Returns
 
 ### Get all salary reviews [GET]
 
-**URL**: _https://lambdadooreu4-staging.herokuapp.com//salaryreviews_
+**URL**: _https://lambdadooreu4-staging.herokuapp.com/salaryreviews_
 
 **Returns**: An array of all salary reviews
 
@@ -777,7 +777,7 @@ Returns
 
 ### Get all of the user's salary reviews [GET]
 
-**URL**: _https://lambdadooreu4-staging.herokuapp.com//salaryreviews/user/:id_
+**URL**: _https://lambdadooreu4-staging.herokuapp.com/salaryreviews/user/:id_
 
 **Returns**: An array of the user's salary reviews
 
@@ -802,7 +802,7 @@ Returns
 
 ### Get a salary review by review id [GET]
 
-**URL**: _https://lambdadooreu4-staging.herokuapp.com//salaryreviews/:id_
+**URL**: _https://lambdadooreu4-staging.herokuapp.com/salaryreviews/:id_
 
 **Returns**: The selected salary review.
 
@@ -827,7 +827,7 @@ Returns
 
 ### Get the average salaries for job types for a particular company using company id [GET]
 
-**URL**: _https://lambdadooreu4-staging.herokuapp.com//salaryreviews/avg/:id_
+**URL**: _https://lambdadooreu4-staging.herokuapp.com/salaryreviews/avg/:id_
 
 **Returns**: An array of the average salaries within the company
 
@@ -852,7 +852,7 @@ Returns
 
 ### Update a single review of the user[PATCH]
 
-**URL**: _https://lambdadooreu4-staging.herokuapp.com//salaryreviews/:id_
+**URL**: _https://lambdadooreu4-staging.herokuapp.com/salaryreviews/:id_
 
 **Returns**: The updated salary review.
 
@@ -870,13 +870,13 @@ Returns
 
 ### Delete a user's salary review [DELETE]
 
-**URL**: _https://lambdadooreu4-staging.herokuapp.com//salaryreviews/:id_
+**URL**: _https://lambdadooreu4-staging.herokuapp.com/salaryreviews/:id_
 
 **Returns**: A 204 status
 
 ### Add a user's salary review [POST]
 
-**URL**: \_https://lambdadooreu4-staging.herokuapp.com//salaryreviews/
+**URL**: \_https://lambdadooreu4-staging.herokuapp.com/salaryreviews/
 
 **Returns**: A 201 status and The added Review
 
@@ -894,7 +894,7 @@ Returns
 
 ### Get a company's salary reviews [GET]
 
-**URL**: \_https://lambdadooreu4-staging.herokuapp.com//salaryreviews/reviews/:id
+**URL**: \_https://lambdadooreu4-staging.herokuapp.com/salaryreviews/reviews/:id
 
 **Returns**: An array of a single company's various salary reviews.
 
@@ -946,7 +946,7 @@ Returns
 
 ### Get all of the user's interview reviews [GET]
 
-**URL**: _https://lambdadooreu4-staging.herokuapp.com//interviewreviews/user/:id_
+**URL**: _https://lambdadooreu4-staging.herokuapp.com/interviewreviews/user/:id_
 
 **Returns**: An array of the user's interview reviews
 
@@ -971,7 +971,7 @@ Returns
 
 ### Get an interview review by review id [GET]
 
-**URL**: _https://lambdadooreu4-staging.herokuapp.com//interviewreviews/:id_
+**URL**: _https://lambdadooreu4-staging.herokuapp.com/interviewreviews/:id_
 
 **Returns**: The selected interview review.
 
@@ -996,7 +996,7 @@ Returns
 
 ### Update a single review of the user[PATCH]
 
-**URL**: _https://lambdadooreu4-staging.herokuapp.com//interviewreviews/:id_
+**URL**: _https://lambdadooreu4-staging.herokuapp.com/interviewreviews/:id_
 
 **Returns**: The updated interview review.
 
@@ -1016,13 +1016,13 @@ Returns
 
 ### Delete a user's interview review [DELETE]
 
-**URL**: _https://lambdadooreu4-staging.herokuapp.com//interviewreviews/:id_
+**URL**: _https://lambdadooreu4-staging.herokuapp.com/interviewreviews/:id_
 
 **Returns**: A 204 status
 
 ### Add a user's interview review [POST]
 
-**URL**: \_https://lambdadooreu4-staging.herokuapp.com//interviewreviews/
+**URL**: \_https://lambdadooreu4-staging.herokuapp.com/interviewreviews/
 
 **Returns**: A 201 status and The added Review
 
@@ -1037,7 +1037,7 @@ Returns
 
 ### Get a company with its interview reviews [GET]
 
-**URL**: \_https://lambdadooreu4-staging.herokuapp.com//interviewreviews/reviews/:id
+**URL**: \_https://lambdadooreu4-staging.herokuapp.com/interviewreviews/reviews/:id
 
 **Returns**: An array of a single company along with its various interview reviews.
 
@@ -1088,7 +1088,7 @@ Returns
 
 ### Get all of the user's reviews [GET]
 
-**URL**: _https://lambdadooreu4-staging.herokuapp.com//dataDisplay_
+**URL**: _https://lambdadooreu4-staging.herokuapp.com/dataDisplay_
 
 **Returns**: Returns an Array of all salary reviews, grouped by interest.
 
@@ -1126,7 +1126,7 @@ Returns
 
 ### Request Refferal [POST]
 
-**URL**: _https://lambdadooreu4-staging.herokuapp.com//referral_
+**URL**: _https://lambdadooreu4-staging.herokuapp.com/referral_
 
 **Returns**: Returns text that request is successful.
 
@@ -1155,7 +1155,7 @@ Returns
 
 ### Search companies [GET]
 
-**URL**: _https://lambdadooreu4-staging.herokuapp.com//search/companies?search_query=acc_
+**URL**: _https://lambdadooreu4-staging.herokuapp.com/search/companies?search_query=acc_
 
 **Returns**: Returns an Array of all matching companies.
 
@@ -1182,7 +1182,7 @@ Returns
 
 ### Search salary reviews [GET]
 
-**URL**: _https://lambdadooreu4-staging.herokuapp.com//search/salaries?search_query=dev_
+**URL**: _https://lambdadooreu4-staging.herokuapp.com/search/salaries?search_query=dev_
 
 **Returns**: Returns an Array of all matching salary reviews.
 
@@ -1219,7 +1219,7 @@ Returns
 
 ### Search interview reviews [GET]
 
-**URL**: _https://lambdadooreu4-staging.herokuapp.com//search/interviews?search_query=san_
+**URL**: _https://lambdadooreu4-staging.herokuapp.com/search/interviews?search_query=san_
 
 **Returns**: Returns an Array of all matching salary reviews.
 
