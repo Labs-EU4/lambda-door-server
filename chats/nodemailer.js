@@ -18,7 +18,7 @@ transporter.use(
       extName: '.handlebars',
       partialsDir: './',
       layoutsDir: './templates',
-      defaultLayout: 'referral.hbs',
+      defaultLayout: 'chat.hbs',
     },
     viewPath: './templates',
     extName: '.hbs',
