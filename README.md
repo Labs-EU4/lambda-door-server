@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.com/Labs-EU4/lambda-door-server.svg?branch=develop)](https://travis-ci.com/Labs-EU4/lambda-door-server)
 [![Coverage Status](https://coveralls.io/repos/github/Labs-EU4/lambda-door-server/badge.svg?branch=develop)](https://coveralls.io/github/Labs-EU4/lambda-door-server?branch=develop)
 
-<!-- ### About
+### About
 
 The one-stop portal for Lambda graduates looking for company information in the quest for a job.
 
@@ -12,14 +12,16 @@ The one-stop portal for Lambda graduates looking for company information in the 
 - View and post interview reviews
 - View and post salary reviews
 - View and post work culture reviews
+- In-app chat with other reviewers
+
 
 ### Application Links
 
-### [Product Vision Document](https://www.notion.so/EU3-Lambda-Door-e78fd9396061487b8b458a28912d66c4)
+### [Product Vision Document](https://www.notion.so/EU4-Lambda-Door-11340785bab24a1c8ec3e5fcaec72e8f)
 
-### [API Link](https://lambdadoor.herokuapp.com/)
+### [API Link](https://lambdadooreu4-staging.herokuapp.com/)
 
-### [Trello board](https://trello.com/b/YdfO1w9X/lambda-door)
+### [Trello board](https://trello.com/b/EQoZOK3D/lambda-door-eu4)
 
 ### NPM Scripts
 
@@ -28,10 +30,21 @@ To get the server running locally:
 - Clone this repo
 - **npm install** to install all required dependencies
 - **npm run server** to start the local server
-- **npm test** to start server using testing environment
+- **npm run test** to start server using testing environment
 - **npm run migrate** to migrate the tables
 - **npm run seed** to seed the tables
 - **npm run rollback** to rollback all tables
+
+## Environment Variables
+
+In order for the app to function correctly, the user must set up their own environment variables.
+
+Create a .env file that includes the following:
+
+- PORT - The port the server will start on.
+- DATABASE_URL - The PostgreSQL database url.
+- TESTING_DB - Test PostgreSQL database url.
+- ACCESS_TOKEN_SECRET - A string to use as JWT salt.
 
 ## Technologies
 
@@ -65,7 +78,7 @@ Test Tools
 
 ![Lambda Door Database Illustration](database/DBIllustration.png)
 
-The API endpoints for the server is on Heroku and can be found [here.](https://lambdadoor.herokuapp.com/)
+The API endpoints for the server is on Heroku and can be found [here.](https://lambdadooreu4-staging.herokuapp.com/)
 
 ## USERS
 
@@ -99,7 +112,7 @@ The API endpoints for the server is on Heroku and can be found [here.](https://l
 
 ### Add a new user [POST]
 
-**URL**: _https://lambdadoor.herokuapp.com/users_
+**URL**: _https://lambdadooreu4-staging.herokuapp.com//users_
 
 **Returns**: An object containing the user credentials.
 
@@ -132,7 +145,7 @@ Input
 
 ### Edit User[PATCH]
 
-**URL**: _https://lambdadoor.herokuapp.com/users/16_
+**URL**: _https://lambdadooreu4-staging.herokuapp.com//users/16_
 
 **Returns**: An array containing an object which holds the users credentials.
 
@@ -166,7 +179,7 @@ Returns
 
 ### Get a user [GET]
 
-**URL**: _https://lambdadoor.herokuapp.com/users/16_
+**URL**: _https://lambdadooreu4-staging.herokuapp.com//users/16_
 
 **Returns**: An object with the user details
 
@@ -205,7 +218,7 @@ Returns
 
 ### Get all interests [GET]
 
-**URL**: _https://lambdadoor.herokuapp.com/interests_
+**URL**: _https://lambdadooreu4-staging.herokuapp.com//interests_
 
 **Returns**: An Array with interest listed in the database
 
@@ -248,7 +261,7 @@ Returns
 
 ### Get a single interest by ID [GET]
 
-**URL**: _https://lambdadoor.herokuapp.com/interests/:id_
+**URL**: _https://lambdadooreu4-staging.herokuapp.com//interests/:id_
 
 **Returns**: An object of a chosen interest.
 
@@ -261,7 +274,7 @@ Returns
 
 ### Get user's interests [GET]
 
-**URL**: _https://lambdadoor.herokuapp.com/interests/user/:id_
+**URL**: _https://lambdadooreu4-staging.herokuapp.com//interests/user/:id_
 
 **Returns**: An array of all interest of the user .
 
@@ -287,7 +300,7 @@ Returns
 
 ### Get interests [GET]
 
-**URL**: _https://lambdadoor.herokuapp.com/interests/ui/:id_
+**URL**: _https://lambdadooreu4-staging.herokuapp.com//interests/ui/:id_
 
 **Returns**: An object of interest with the name of the interest and the interest id linked to the user.
 
@@ -302,7 +315,7 @@ Returns
 
 ### Post User interest [POST]
 
-**URL**: _https://lambdadoor.herokuapp.com/interests/_
+**URL**: _https://lambdadooreu4-staging.herokuapp.com//interests/_
 
 **Reaturn**: An array of the users intersts along with the new addition.
 
@@ -334,7 +347,7 @@ Output
 
 ### delete User interest [DELETE]
 
-**URL**: _https://lambdadoor.herokuapp.com/interests/_
+**URL**: _https://lambdadooreu4-staging.herokuapp.com//interests/_
 
 **Reaturn**: A message os successful deletion along with an an object of the deleted interest.
 
@@ -386,7 +399,7 @@ Output
 
 ### Get all companies [GET]
 
-**URL**: \_https://lambdadoor.herokuapp.com/companies
+**URL**: \_https://lambdadooreu4-staging.herokuapp.com//companies
 
 **Returns**: An array of companies in the db with their details and average rating
 
@@ -415,7 +428,7 @@ Returns
 
 ### Get top-rated companies [GET]
 
-**URL**: \_https://lambdadoor.herokuapp.com/companies/top
+**URL**: \_https://lambdadooreu4-staging.herokuapp.com//companies/top
 
 **Returns**: An array of the five top-rated companies in the db and their average rating
 
@@ -436,7 +449,7 @@ Returns
 
 ### Get closest companies to the user's location [GET]
 
-**URL**: \_https://lambdadoor.herokuapp.com/companies/:id/closest
+**URL**: \_https://lambdadooreu4-staging.herokuapp.com//companies/:id/closest
 
 **Returns**: An array of the closest companies to the user's location
 
@@ -459,7 +472,7 @@ Returns
 
 ### Get a company by Id [GET]
 
-**URL**: _https://lambdadoor.herokuapp.com/companies/1_
+**URL**: _https://lambdadooreu4-staging.herokuapp.com//companies/1_
 
 **Returns**: An object which holds the company details and average rating
 
@@ -482,7 +495,7 @@ Returns
 
 ### Update a company Info by Id [PATCH]
 
-**URL**: _https://lambdadoor.herokuapp.com/companies/1_
+**URL**: _https://lambdadooreu4-staging.herokuapp.com//companies/1_
 **Headers** : passcode = process.env.ADMIN_PREVILEGE_TOKEN
 
 **Returns**: An object which holds the company details and average rating
@@ -506,7 +519,7 @@ Returns
 
 ### Adds a new Company [POST]
 
-**URL**: \_https://lambdadoor.herokuapp.com/companies/
+**URL**: \_https://lambdadooreu4-staging.herokuapp.com//companies/
 
 **Returns**: An object containing the company that was posted
 
@@ -576,7 +589,7 @@ Returns
 
 ### Get all of the user's reviews [GET]
 
-**URL**: _https://lambdadoor.herokuapp.com/companyreviews/user/:id_
+**URL**: _https://lambdadooreu4-staging.herokuapp.com//companyreviews/user/:id_
 
 **Returns**: An array of the user's reviews
 
@@ -602,7 +615,7 @@ Returns
 
 ### Get a review by review id [GET]
 
-**URL**: _https://lambdadoor.herokuapp.com/companyreviews/:id_
+**URL**: _https://lambdadooreu4-staging.herokuapp.com//companyreviews/:id_
 
 **Returns**: The selected review.
 
@@ -628,7 +641,7 @@ Returns
 
 ### Update an individual review [PATCH]
 
-**URL**: _https://lambdadoor.herokuapp.com/companyreviews/:id_
+**URL**: _https://lambdadooreu4-staging.herokuapp.com//companyreviews/:id_
 
 **Returns**: The updated review.
 
@@ -652,13 +665,13 @@ Returns
 
 ### Delete a user's review [DELETE]
 
-**URL**: _https://lambdadoor.herokuapp.com/companyreviews/:id_
+**URL**: _https://lambdadooreu4-staging.herokuapp.com//companyreviews/:id_
 
 **Returns**: A 204 status
 
 ### Add a user's review [POST]
 
-**URL**: _https://lambdadoor.herokuapp.com/companyreviews/:id_
+**URL**: _https://lambdadooreu4-staging.herokuapp.com//companyreviews/:id_
 
 **Returns**: A 201 status and The added Review
 
@@ -682,7 +695,7 @@ Returns
 
 ### Get a single company's reviews [GET]
 
-**URL**: \_https://lambdadoor.herokuapp.com/companyreviews/reviews/:id
+**URL**: \_https://lambdadooreu4-staging.herokuapp.com//companyreviews/reviews/:id
 
 **Returns**: An array of a selected company's various reviews.
 
@@ -738,7 +751,7 @@ Returns
 
 ### Get all salary reviews [GET]
 
-**URL**: _https://lambdadoor.herokuapp.com/salaryreviews_
+**URL**: _https://lambdadooreu4-staging.herokuapp.com//salaryreviews_
 
 **Returns**: An array of all salary reviews
 
@@ -764,7 +777,7 @@ Returns
 
 ### Get all of the user's salary reviews [GET]
 
-**URL**: _https://lambdadoor.herokuapp.com/salaryreviews/user/:id_
+**URL**: _https://lambdadooreu4-staging.herokuapp.com//salaryreviews/user/:id_
 
 **Returns**: An array of the user's salary reviews
 
@@ -789,7 +802,7 @@ Returns
 
 ### Get a salary review by review id [GET]
 
-**URL**: _https://lambdadoor.herokuapp.com/salaryreviews/:id_
+**URL**: _https://lambdadooreu4-staging.herokuapp.com//salaryreviews/:id_
 
 **Returns**: The selected salary review.
 
@@ -814,7 +827,7 @@ Returns
 
 ### Get the average salaries for job types for a particular company using company id [GET]
 
-**URL**: _https://lambdadoor.herokuapp.com/salaryreviews/avg/:id_
+**URL**: _https://lambdadooreu4-staging.herokuapp.com//salaryreviews/avg/:id_
 
 **Returns**: An array of the average salaries within the company
 
@@ -839,7 +852,7 @@ Returns
 
 ### Update a single review of the user[PATCH]
 
-**URL**: _https://lambdadoor.herokuapp.com/salaryreviews/:id_
+**URL**: _https://lambdadooreu4-staging.herokuapp.com//salaryreviews/:id_
 
 **Returns**: The updated salary review.
 
@@ -857,13 +870,13 @@ Returns
 
 ### Delete a user's salary review [DELETE]
 
-**URL**: _https://lambdadoor.herokuapp.com/salaryreviews/:id_
+**URL**: _https://lambdadooreu4-staging.herokuapp.com//salaryreviews/:id_
 
 **Returns**: A 204 status
 
 ### Add a user's salary review [POST]
 
-**URL**: \_https://lambdadoor.herokuapp.com/salaryreviews/
+**URL**: \_https://lambdadooreu4-staging.herokuapp.com//salaryreviews/
 
 **Returns**: A 201 status and The added Review
 
@@ -881,7 +894,7 @@ Returns
 
 ### Get a company's salary reviews [GET]
 
-**URL**: \_https://lambdadoor.herokuapp.com/salaryreviews/reviews/:id
+**URL**: \_https://lambdadooreu4-staging.herokuapp.com//salaryreviews/reviews/:id
 
 **Returns**: An array of a single company's various salary reviews.
 
@@ -933,7 +946,7 @@ Returns
 
 ### Get all of the user's interview reviews [GET]
 
-**URL**: _https://lambdadoor.herokuapp.com/interviewreviews/user/:id_
+**URL**: _https://lambdadooreu4-staging.herokuapp.com//interviewreviews/user/:id_
 
 **Returns**: An array of the user's interview reviews
 
@@ -958,7 +971,7 @@ Returns
 
 ### Get an interview review by review id [GET]
 
-**URL**: _https://lambdadoor.herokuapp.com/interviewreviews/:id_
+**URL**: _https://lambdadooreu4-staging.herokuapp.com//interviewreviews/:id_
 
 **Returns**: The selected interview review.
 
@@ -983,7 +996,7 @@ Returns
 
 ### Update a single review of the user[PATCH]
 
-**URL**: _https://lambdadoor.herokuapp.com/interviewreviews/:id_
+**URL**: _https://lambdadooreu4-staging.herokuapp.com//interviewreviews/:id_
 
 **Returns**: The updated interview review.
 
@@ -1003,13 +1016,13 @@ Returns
 
 ### Delete a user's interview review [DELETE]
 
-**URL**: _https://lambdadoor.herokuapp.com/interviewreviews/:id_
+**URL**: _https://lambdadooreu4-staging.herokuapp.com//interviewreviews/:id_
 
 **Returns**: A 204 status
 
 ### Add a user's interview review [POST]
 
-**URL**: \_https://lambdadoor.herokuapp.com/interviewreviews/
+**URL**: \_https://lambdadooreu4-staging.herokuapp.com//interviewreviews/
 
 **Returns**: A 201 status and The added Review
 
@@ -1024,7 +1037,7 @@ Returns
 
 ### Get a company with its interview reviews [GET]
 
-**URL**: \_https://lambdadoor.herokuapp.com/interviewreviews/reviews/:id
+**URL**: \_https://lambdadooreu4-staging.herokuapp.com//interviewreviews/reviews/:id
 
 **Returns**: An array of a single company along with its various interview reviews.
 
@@ -1075,7 +1088,7 @@ Returns
 
 ### Get all of the user's reviews [GET]
 
-**URL**: _https://lambdadoor.herokuapp.com/dataDisplay_
+**URL**: _https://lambdadooreu4-staging.herokuapp.com//dataDisplay_
 
 **Returns**: Returns an Array of all salary reviews, grouped by interest.
 
@@ -1113,7 +1126,7 @@ Returns
 
 ### Request Refferal [POST]
 
-**URL**: _https://lambdadoor.herokuapp.com/referral_
+**URL**: _https://lambdadooreu4-staging.herokuapp.com//referral_
 
 **Returns**: Returns text that request is successful.
 
@@ -1142,7 +1155,7 @@ Returns
 
 ### Search companies [GET]
 
-**URL**: _https://lambdadoor.herokuapp.com/search/companies?search_query=acc_
+**URL**: _https://lambdadooreu4-staging.herokuapp.com//search/companies?search_query=acc_
 
 **Returns**: Returns an Array of all matching companies.
 
@@ -1169,7 +1182,7 @@ Returns
 
 ### Search salary reviews [GET]
 
-**URL**: _https://lambdadoor.herokuapp.com/search/salaries?search_query=dev_
+**URL**: _https://lambdadooreu4-staging.herokuapp.com//search/salaries?search_query=dev_
 
 **Returns**: Returns an Array of all matching salary reviews.
 
@@ -1206,7 +1219,7 @@ Returns
 
 ### Search interview reviews [GET]
 
-**URL**: _https://lambdadoor.herokuapp.com/search/interviews?search_query=san_
+**URL**: _https://lambdadooreu4-staging.herokuapp.com//search/interviews?search_query=san_
 
 **Returns**: Returns an Array of all matching salary reviews.
 
@@ -1239,15 +1252,6 @@ Returns
 ];
 ```
 
-## Environment Variables
-
-In order for the app to function correctly, the user must set up their own environment variables.
-
-Create a .env file that includes the following:
-
-- PORT - The port the server will start on.
-- DATABASE_URL - The PostgreSQL database url.
-- ACCESS_TOKEN_SECRET - The test url.
 
 ## Contributing
 
@@ -1284,8 +1288,8 @@ Remember that this project is licensed under the MIT license, and by submitting 
 
 ### Attribution
 
-These contribution guidelines have been adapted from [this good-Contributing.md-template](https://gist.github.com/PurpleBooth/b24679402957c63ec426). -->
+These contribution guidelines have been adapted from [this good-Contributing.md-template](https://gist.github.com/PurpleBooth/b24679402957c63ec426).
 
-## Documentation
+## Frontend Documentation
 
-See [Frontend Documentation](https://github.com/Labs-EU4/lambda-door-client) for details on the frontend of our project.
+See [Frontend Documentation](https://github.com/Labs-EU4/lambda-door-client) for details on the frontend of our project and more information about the team.
