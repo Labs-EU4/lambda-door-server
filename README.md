@@ -23,6 +23,23 @@ The one-stop portal for Lambda graduates looking for company information in the 
 
 ### [Trello board](https://trello.com/b/EQoZOK3D/lambda-door-eu4)
 
+## Team
+
+|                                               **[Colin Toft](http://colintoft.dev/)**                                                |                                     **[Olamide Oredola](https://github.com/ola-dola)**                                      |                                          **[Evans Ibok](http://evansibok.com)**                                          |                                    **[Rodrigo Gracia](http://portfolio.rodrigograca.com/)**                                    |
+| :----------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------: |
+|                                                          Frontend Architect                                                          |                                                     Frontend Architect                                                      |                                                    Frontend Architect                                                    |                                                       Frontend Architect                                                       |
+|       [<img src="https://ca.slack-edge.com/T4JUEB3ME-UNM9CA6NS-ae583a3c9f79-512" width="200" />](https://github.com/cappers86)       |   [<img src="https://ca.slack-edge.com/T4JUEB3ME-UM3NF5BTQ-f7cf3f2c495e-512" width="200" />](https://github.com/ola-dola)   | [<img src="https://ca.slack-edge.com/T4JUEB3ME-ULW170LKF-b68116040dbd-512" width="200" />](https://github.com/evansibok) | [<img src="https://ca.slack-edge.com/T4JUEB3ME-UNM9C9G4W-gb34f66f0b1d-512" width="200" />](https://github.com/rodrigograca31)  |
+|                        [<img src="https://github.com/favicon.ico" width="20"> ](https://github.com/cappers86)                        |                    [<img src="https://github.com/favicon.ico" width="20"> ](https://github.com/ola-dola)                    |                  [<img src="https://github.com/favicon.ico" width="20"> ](https://github.com/evansibok)                  |                  [<img src="https://github.com/favicon.ico" width="20"> ](https://github.com/rodrigograca31)                   |
+| [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="20"> ](https://www.linkedin.com/in/colin-toft-41975518a) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="20"> ](https://www.linkedin.com/in/ola-oredola) |  [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="20"> ](https://linkedin.com/in/evansibok)   | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="20"> ](https://www.linkedin.com/in/rodrigograca31) |
+
+|                                      **[Alexander Oguejiofor](https://github.com/kip-guile)**                                       |
+| :---------------------------------------------------------------------------------------------------------------------------------: |
+|                                                              Team Lead                                                              |
+|      [ <img src="https://ca.slack-edge.com/T4JUEB3ME-UM150T4TZ-d6a8275db0f5-512" width="200"> ](https://github.com/kip-guile)       |
+|                       [<img src="https://github.com/favicon.ico" width="20"> ](https://github.com/kip-guile)                        |
+| [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="20"> ](https://www.linkedin.com/in/alexanderoguejiofor) |
+
+
 ### NPM Scripts
 
 To get the server running locally:
@@ -1292,4 +1309,4 @@ These contribution guidelines have been adapted from [this good-Contributing.md-
 
 ## Frontend Documentation
 
-See [Frontend Documentation](https://github.com/Labs-EU4/lambda-door-client) for details on the frontend of our project and more information about the team.
+See [Frontend Documentation](https://github.com/Labs-EU4/lambda-door-client) for details on the frontend of our project.
